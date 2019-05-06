@@ -14,7 +14,7 @@ class TLClassifier(object):
     def __init__(self):
         #TODO load classifier
         current_path = os.getcwd()
-        PATH_TO_CKPT = os.path.join(current_path, 'light_classification', 'pix', 'frozen_inference_graph.pb')
+        PATH_TO_CKPT = os.path.join(current_path, 'light_classification', 'tl_classifier', 'frozen_inference_graph.pb')
         NUM_CLASSES = 3
         
         # Load a (frozen) Tensorflow model into memory
