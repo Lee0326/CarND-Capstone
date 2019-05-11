@@ -63,9 +63,10 @@ class TLClassifier(object):
     def get_state(self, scores, classes, boxes=None):
         scores_flat = scores.flatten()
         max_score = np.max(scores_flat)
-        
+        rospy.loginfo(max_score)
         if max_score < SCORE_THRESHOLD:
             return TrafficLight.UNKNOWN
+
         else:
             label = classes.flatten()[np.argmax(scores_flat)]
             return LABEL2STATE_MAP[label]        
